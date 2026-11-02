@@ -11,13 +11,13 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 21
       - name: Prepare
         run: |
           mkdir www
           cp hokm-single.html www/index.html
           npm init -y
-          npm i --legacy-peer-deps @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6 capacitor-zeroconf
+          npm i --legacy-peer-deps @capacitor/core@7 @capacitor/cli@7 @capacitor/android@7 capacitor-zeroconf
           npx cap init Hokm com.example.hokm --web-dir www
           npx cap add android
           npx cap sync
